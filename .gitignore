@@ -1,0 +1,105 @@
+# Visual Studio specific files
+.vs/
+*.suo
+*.user
+*.pdb
+*.obj
+*.o
+*.ncb
+*.aps
+*.bsc
+*.sbr
+*.resharper
+*.vspscc
+*.vssscc
+*.vsp
+*.builds
+*.log
+*.bak
+*.cache
+*.ncb
+*.opendb
+*.sql
+*.vbs
+
+# Build Folders
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+[Tt]emp/
+[Rr]esharper/
+*_UpgradeReport.htm
+
+# NuGet packages
+packages/
+*.nupkg
+## Ignore NuGet's project-level packages folder
+# For Visual Studio 2017 and earlier
+# .nuget/packages/
+# For Visual Studio 2019 and later (solution-level packages folder)
+# .vs/
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# Local history files
+.history/
+
+# User-specific files for IIS Express
+*.vshost.*
+
+# Generated files
+*.aps
+*.bsc
+*.buildlog
+*.fxcop
+*.pdb
+*.sbr
+*.tlog
+
+# SQL Server database files
+*.mdf
+*.ldf
+
+# Image upload folder (if you want to keep them out of source control)
+# You specified 'images/' as your upload folder. If you want to keep uploaded images
+# from being committed to Git, uncomment the line below.
+# However, if 'images/' contains static assets that are part of your
+# application, you might want to keep it in source control, then
+# leave this line commented out.
+#/ArtManagementmvc/images/
+
+# Compiled files
+*.dll
+*.exe
+
+# Configuration files
+# If you have sensitive connection strings or API keys in Web.config that
+# change per environment and shouldn't be in Git, you might ignore it and
+# keep a Web.config.template, but for typical use, Web.config is usually included.
+# Web.config
+# Web.config.user
+
+# Project files
+*.csproj.user
+*.vcxproj.user
+
+# Git related
+.git/
+.gitignore
+
+# Npm / Yarn
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Mac specific files
+.DS_Store
+
+# Misc
+Thumbs.db
