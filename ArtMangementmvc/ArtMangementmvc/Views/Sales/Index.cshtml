@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ArtMangementmvc.Models.Sale>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Art List</h2>
+<div>
+    <a href="@Url.Action("Create","Sales")" id="btnCreate" class="btn btn-success float-end mb-2">Add New Sales</a>
+</div>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Customer Name</th>
+            <th>Invoice Date</th>
+            <th>Invoice No</th>
+            <th>CustomerType Name</th>
+            <th>IsPaid?</th>
+            <th>Details</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td><img src=@Url.Content("~/images/"+s.ImageUrl) height="100" /></td>
+
+                <td>@s.CustomerName</td>
+
+                <td>@s.InvoiceDate@*.ToString("yyyy-MM-dd")*@</td>
+
+                <td>@s.InvoiceNo</td>
+
+                <td>@s.CustomerType.CustomerTypeName</td>
+
+                <td>@(s.IsPaid? "Paid": "Not Paid")</td>
+                <td>
+                    <ul>
+                        @foreach (var m in s.SaleDetailes)
+                        {
+                            <li>@m.ArtName : @m.Quantity</li>
+                        }
+                    </ul>
+                </td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="@Url.Action("Edit","Sales", new {id=s.SaleId})">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="@Url.Action("Delete","Sales", new {id=s.SaleId})" onclick="return confirm('Are you sure you want to delete @s.CustomerName')">Delete</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

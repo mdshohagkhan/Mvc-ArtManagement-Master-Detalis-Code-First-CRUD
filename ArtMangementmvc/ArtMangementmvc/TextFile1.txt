@@ -1,0 +1,44 @@
+﻿ public CustomerType()
+        {
+            this.Sales = new HashSet<Sale>();
+        }
+    
+        public int CustomerTypeId { get; set; }
+        public string CustomerTypeName { get; set; }
+    
+       
+        public virtual ICollection<Sale> Sales { get; set; }
+
+
+
+        public Sale()
+        {
+            this.SaleDetailes = new HashSet<SaleDetaile>();
+        }
+    
+        public int SaleId { get; set; }
+        public string CustomerName { get; set; }
+        public int InvoiceNo { get; set; }
+        public System.DateTime InvoiceDate { get; set; }
+        public bool IsPaid { get; set; }
+        public string ImageUrl { get; set; }
+        public int CustomerTypeId { get; set; }
+    
+        public virtual CustomerType CustomerType { get; set; }
+        
+        public virtual ICollection<SaleDetaile> SaleDetailes { get; set; }
+
+
+
+        using System;
+    using System.Collections.Generic;
+    
+    public partial class SaleDetaile
+    {
+        public int SaleDetaileId { get; set; }
+        public string ArtName { get; set; }
+        public int Quantity { get; set; }
+        public int SaleId { get; set; }
+    
+        public virtual Sale Sale { get; set; }
+    }
